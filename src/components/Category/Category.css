@@ -1,0 +1,27 @@
+#pagination-ul li a{
+    width: 90px;
+}
+#pagination-ul li .dis{
+       pointer-events: none !important;
+       cursor: default;
+       /* color:Gray; */
+}
+
+
+#goEndFirst{
+    width: 100px !important;
+}
+
+@media (max-width: 768px) {
+
+  #next-prev{
+    width: 70px !important;
+  }
+  #goEndFirst{
+    width: 50px !important;
+  }
+   /* .page-item div{
+     display: none !important;
+   } */
+
+}

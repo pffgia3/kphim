@@ -1,0 +1,43 @@
+body {
+  background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
+}
+
+.container {
+  max-width: 960px;
+}
+
+.pricing-header {
+  min-height  : 400px;
+}
+
+@media (max-width: 767px) {
+   .pricing-header {
+    min-height  : 250px;
+  }
+  .col{
+      max-width: 170px !important; 
+  }
+  #PricePlan{
+    padding-left: 5%;
+  }
+  .col .card-body ul{
+    display: none;
+  }
+   .col .card-body button{
+    font-size: 80%;
+  }
+  #iframeLinkBody{
+    padding-bottom: 0 !important;
+  }
+    #iframeLinkBody iframe{
+     width: 100%;
+  }
+}
+
+.col{
+      max-width: 235px;
+}
+
+.col .card-body ul{
+        min-height: 110px;
+}

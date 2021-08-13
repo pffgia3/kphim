@@ -1,0 +1,71 @@
+.nav-item:hover .nav-link{
+	color: #ff0000 !important;
+}
+
+/* .nav-item:hover:after{
+	bottom: 0;
+	opacity: 1;
+} */
+
+/* .nav-item.active:hover:after{
+	opacity: 0;
+} */
+.nav-item{
+	position: relative;
+    transition: all 200ms linear;
+}
+
+/* .nav-item:after{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	content: '';
+	background-color: #ff0000;
+	opacity: 0;
+    transition: all 200ms linear;
+} */
+
+/* drodown */
+
+.btn.btn-outline-light:hover{
+	background-color: rgb(201, 0, 0);
+	color: white
+}
+
+#nutDangNhap{
+	color: white;
+}
+
+#nutDangNhap:hover{
+	color: rgb(201, 0, 0);
+}
+
+#nutDangNhap{
+	max-height: 40px;
+	max-width: 40px;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	border-radius: 500px;
+	padding:0;
+	
+}
+
+.holdimg button{
+	width: fit-content;
+	height: fit-content;
+}
+
+@media (max-width: 767px) {
+	#header-real div a img{
+		width: 60px;
+		height: 30px;
+		margin-left: 10px;
+	}
+
+	.holdimg{
+		/* padding-right: calc(50vw - 200px); */
+	}
+}
+

@@ -1,0 +1,15 @@
+#pagination-ul li a{
+    width: 90px;
+}
+#pagination-ul li .dis{
+       pointer-events: none !important;
+       cursor: default;
+       /* color:Gray; */
+}
+
+
+.no-result{
+    /* min-height: 400px;
+    max-height: 800px; */
+    height: 50vh;
+}
