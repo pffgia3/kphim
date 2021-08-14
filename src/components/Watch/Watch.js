@@ -60,7 +60,7 @@ function Watch() {
         );
         getDatatit(res2.data);
 
-        console.log(res.data)
+        // console.log(res.data)
         var a = [];
           res.data.forEach((item) => {
             if (!a.includes(item.chap)) a.push(item.chap);
@@ -68,7 +68,7 @@ function Watch() {
           setlistchap(a);
           setInit(true);
         
-        console.log("]]")
+        // console.log("]]")
         if (!name) {
           let x = window.location.href + "/" + (res2.data.title.replaceAll(" ","-"));
           window.location.replace(x);
@@ -95,7 +95,7 @@ function Watch() {
                 .then(
                   axios.spread(function (res) {
                     // that.setState({ isLoading: false })
-                    console.log();
+                    // console.log();
                     getData(res.data);
                   })
                 )
@@ -106,7 +106,7 @@ function Watch() {
 
     useEffect(() => {
       getDataApi();
-      console.log(name);
+      // console.log(name);
       firebase.auth().onAuthStateChanged((user) => {
           // let x = user.displayName;
           // this.setState({ username: x });
@@ -116,7 +116,7 @@ function Watch() {
     },[]);
 
     function changeChap(value) {
-        console.log(value);
+        // console.log(value);
         setnowchap(value)
         setnowServer(1);
     }
@@ -128,11 +128,12 @@ function Watch() {
 
     function vipPricePlan() {
       var x = document.getElementById("PricePlan");
-      var y = document.getElementById("buttonGoPlan");
+      // var y = document.getElementById("buttonGoPlan");
       if (x.style.display === "none") {
         x.style.display = "flex";
-        y.style.display = "none";
+        // y.style.display = "none";
       } 
+      else x.style.display = "none";
     }
 
     // Baosl ỗi
@@ -366,7 +367,7 @@ function Watch() {
             </nav>
           </header>
           <main className="mt-3">
-            <div className="vipPricePlan" id="buttonGoPlan">
+            <div className="vipPricePlan mb-3" id="buttonGoPlan">
               <a
                 className="btn btn-outline-danger"
                 onClick={() => vipPricePlan()}

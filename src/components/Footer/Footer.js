@@ -23,14 +23,17 @@ class Footer extends Component {
           <div className="container text-center text-md-start">
             <div className="row pt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
-                <h6 className="text-uppercase fw-bold mb-4">
+                <h6 className="text-uppercase fw-bold mb-3">
                   <i class="fas fa-pencil-ruler me-2"></i>
                   Designed by KPhim
                 </h6>
                 <p>
-                  <i class="fas fa-exclamation-triangle me-1"></i> Không công khai
-                  source và sử dụng cho thương mại nếu không có sự cho phép của
-                  tác giả!
+                  <i class="fas fa-heart me-1 mb-0 pb-0"></i> Chúc bạn sống một cuộc đời
+                  hạnh phúc và không phải hối tiếc, love you all!
+                </p>
+                <p>
+                  <i class="fas fa-exclamation-triangle me-1 mt-0 pt-0"></i> ClickPhim go
+                  hell.
                 </p>
               </div>
 
@@ -52,9 +55,9 @@ class Footer extends Component {
                     Facebook
                   </a>
                 </p>
-                <p>
+                {/* <p>
                   <i className="fas fa-phone me-1" /> updating...
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -65,13 +68,9 @@ class Footer extends Component {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
         >
           © 2021 Copyright:
-          <a
-            className="text-reset fw-bold ms-1 me-1"
-            href="https://www.facebook.com/kphim.fb/"
-          >
+          <a className="text-reset fw-bold ms-1 me-1" href="http://kphim.xyz">
             KPHIM
           </a>
-          - Liên hệ nếu có nhu cầu
         </div>
       </footer>
     );

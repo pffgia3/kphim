@@ -222,7 +222,7 @@ function Home () {
   }, []);
 
   useEffect(() => {
-    console.log(trending);
+    // console.log(trending);
       if(recommend.length != 0)
       loadCarousel();
   });

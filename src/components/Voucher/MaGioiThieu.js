@@ -45,7 +45,9 @@ class MaGioiThieu extends Component {
               .then(
                 axios.spread(function (res) {
                   that.setState({ isLoading: false });
-                  if (res.data == true) alert("Cộng 20 Koin !!!");
+                  if (res.data == true) {alert("Cộng 20 Koin !!!");
+                  window.location.reload();
+                }
                   else if (res.data == "NotFoundCode")
                     alert("Error: Code không đúng!");
                   else if (res.data == "NotYourCode")
@@ -64,19 +66,19 @@ class MaGioiThieu extends Component {
 
   getinfo() {
     {
-      console.log("hehexxx");
+      // console.log("hehexxx");
       let that = this;
       axios
         .all([
           axios.get(
             process.env.REACT_APP_API_LOCAL +
               "/mycode/" +
-              firebase.auth().currentUser.uid
+              firebase.auth().currentUser.email
           ),
         ])
         .then(
           axios.spread(function (mycode) {
-            console.log("hehee", mycode.data);
+            // console.log("hehee", mycode.data);
             that.setState({
               mycode: mycode.data,
               getmycode: true,
@@ -134,7 +136,7 @@ class MaGioiThieu extends Component {
                 <p className="mt-2 mb-0">Mỗi người chỉ được nhập một lần!</p>
                 <p className="mb-0">Nhập mã để cả hai cùng nhận 20 Koin</p>
                 <p>
-                  {console.log(this.state.mycode[0])}
+                  {/* {console.log(this.state.mycode[0])} */}
                   Mã của bạn:{" "}
                   {/* {this.state.mycode[0] != undefined && (
                     <strong>{this.state.mycode[0].code}</strong>

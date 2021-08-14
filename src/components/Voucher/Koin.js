@@ -53,7 +53,7 @@ class Koin extends Component {
   }
 
   NapKoin() {
-    alert(this.state.type + "_"+ this.state.inputMGD +"_"+this.state.menhgia);
+    // alert(this.state.type + "_"+ this.state.inputMGD +"_"+this.state.menhgia);
     if (this.state.inputMGD != "" && this.state.inputMGD != null) {
       let that = this;
       this.setState({ isLoading: true });
@@ -104,13 +104,13 @@ class Koin extends Component {
           axios.get(
             process.env.REACT_APP_API_LOCAL +
               "/mykoin/" +
-              firebase.auth().currentUser.uid
+              firebase.auth().currentUser.email
           ),
           axios.get(process.env.REACT_APP_API_LOCAL + "/stk"),
         ])
         .then(
           axios.spread(function (mycode, getstk) {
-            console.log("hehee", mycode.data.coin, getstk.data.momo);
+            // console.log("hehee", mycode.data.coin, getstk.data.momo);
             that.setState(
               {
                 mycoin: mycode.data.coin,

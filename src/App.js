@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -10,16 +10,15 @@ import Caterogy from './components/Category/Category';
 import Search from './components/Search/Search';
 import Login from './components/Login/Login';
 import Voucher from './components/Voucher/Voucher';
-
-import ads from "./images/ads2.gif";
+import ads1 from "./images/ads1.gif";
 // firebase
 
 
 import firebase from "firebase/app";
-import "firebase/auth";
 import MaGioiThieu from './components/Voucher/MaGioiThieu';
 import Koin from './components/Voucher/Koin';
-
+import MyVip from './components/Voucher/MyVip';
+import Loading from './components/Loading/Loading';
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +27,7 @@ class App extends Component {
       data: null,
       recommend: {},
       trending: {},
+      isLoading:true,
 
       currentUser: null,
       authUser: false,
@@ -35,15 +35,34 @@ class App extends Component {
     };
   }
 
+  componentDidMount(){
+      firebase.auth().onAuthStateChanged((user) => {
+        let that = this;
+        axios.all([axios.get(
+              process.env.REACT_APP_API_LOCAL +
+                "/checkConnectApi")])
+          .then(
+             axios.spread(function (rs) {
+                that.setState({ isLoading: rs.data })
+                })
+             )
+      });
+  }
 
   render() {
     const { user } = this.props;
     return (
       <div className="App">
-
         <Header currentUser={firebase.auth().currentUser} />
-        {/* <br></br>
-            <img src={ads} style={{width: "100%"}}></img> */}
+
+        <div id="ads1" className="ms-2">
+          <img src={ads1}>
+          </img>{" "}
+        </div>
+
+        {this.state.isLoading && (
+        <Loading/>
+        )}
         <div className="bodyall pb-5">
           <Router>
             <Route exact path="/">
@@ -87,7 +106,9 @@ class App extends Component {
             <Route path="/my-koin">
               <Koin />
             </Route>
-            
+            <Route path="/my-vip">
+              <MyVip />
+            </Route>
           </Router>
         </div>
 

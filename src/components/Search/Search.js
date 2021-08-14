@@ -28,7 +28,7 @@ function Search() {
 
   const getApiData = async (keysearch, last, nextOrPrev) => {
     try {
-        console.log(last+">>");
+        // console.log(last+">>");
       const res = await axios.get(
         process.env.REACT_APP_API_LOCAL +
           "/searchfilm/" +
@@ -40,14 +40,9 @@ function Search() {
       );
       getData(res.data);
       getLast(res.data[res.data.length - 1].id);
-      getFirst(res.data[0].id);
-      // console.log("/caterogy/" + type + "/" + keysearch + "/" + last);
-      res.data.map((obs)=>
-             console.log(obs.id)
-      )
- 
+      getFirst(res.data[0].id); 
     } catch (e) {
-      console.log(e);
+      console.log("Không có kết quả");
     }
   };
 

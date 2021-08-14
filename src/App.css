@@ -96,3 +96,22 @@ body {
 .bodyall{
   background-color: rgb(10, 0, 0);
 }
+
+
+
+#ads1 img{
+  width: 200px;
+  height: 300px;
+}
+
+#ads1{
+      position: fixed;
+      text-align: end;
+      margin-top: 7vh;
+}
+
+@media (max-width: 1300px) {
+  #ads1{
+    display: none;
+  }
+}

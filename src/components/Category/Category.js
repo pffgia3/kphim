@@ -4,7 +4,7 @@ import axios from "axios";
 import "../Category/Category.css";
 import FilmItem2 from "../FilmItem/FilmItem2";
 import PopupItem from "../FilmItem/PopupItem";
-
+import Loading from "../Loading/Loading";
 
 function Caterogy() {
   const { type, value, order } = useParams();
@@ -15,6 +15,7 @@ function Caterogy() {
   const [first, getFirst] = useState([]);
   const [nowpage, getNowpage] = useState(1);
   const [keysearch, getKeysearch] = useState([]);
+  const [isLoading, getisLoading] = useState(false);
 
   const theloaiRequest = [
     "tat-ca",
@@ -85,11 +86,13 @@ function Caterogy() {
   const getApiData = async (keysearch, last, nextOrPrev) => {
     try{
     const res = await axios.get(process.env.REACT_APP_API_LOCAL+"/caterogy/"+type+"/"+keysearch+"/"+last + "/" + nextOrPrev);
+    // console.log(res.data);
     getData(res.data);
     getLast(res.data[res.data.length - 1].id);
     getFirst(res.data[0].id);
-    console.log("/caterogy/"+type+"/"+keysearch+"/"+last);
-    console.log(res.data[(res.data.length)-1].id);
+    getisLoading(false)
+    // console.log("/caterogy/"+type+"/"+keysearch+"/"+last);
+    // console.log(res.data[(res.data.length)-1].id);
     }
     catch(e){
       console.log(e);
@@ -98,8 +101,8 @@ function Caterogy() {
 
    function  getPagingData(step) {
      // step: next prev, start
-    console.log("next page"+ keysearch + "__" +last);
-
+    // console.log("next page"+ keysearch + "__" +last);
+    getisLoading(true);
     if (step == "next") {
       getApiData(keysearch, last, step);
       getNowpage(nowpage + 1);
@@ -144,7 +147,8 @@ function Caterogy() {
 
   return (
     <div>
-      {console.log(data.length)}
+      {/* {console.log(data.length)} */}
+      {isLoading && <Loading/>}
       <main className="bd-content order-1 py-5" id="content">
         <div className="container">
           <h2 id="page">{showCategory}</h2>

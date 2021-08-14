@@ -85,7 +85,7 @@ class Login extends Component {
         />
         <h1 className="h3 mb-3 fw-normal">
           LOGIN
-          {!firebase.auth() && console.log(firebase.auth().currentUser)}
+          {/* {!firebase.auth() && console.log(firebase.auth().currentUser)} */}
         </h1>
         {user ? (
           <div>

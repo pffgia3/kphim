@@ -20,7 +20,7 @@ class Header extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(e.target.value);
+    // console.log(e.target.value);
     var typeSearch = "/search/" + e.target.value;
     this.setState({
       search: typeSearch,
@@ -29,7 +29,7 @@ class Header extends Component {
 
   onSubmitYear(e) {
     e.preventDefault();
-    console.log(e.target.value);
+    // console.log(e.target.value);
     var typeSearch = "/category/nam/" + e.target.value;
     this.setState({
       year: typeSearch,
@@ -152,7 +152,7 @@ class Header extends Component {
                       {/* <a className="dropdown-item" href="/category/nam/old">
                         &lt; 2014
                       </a> */}
-                      <form action={this.state.year + "/new"} method="get">
+                      <form action={this.state.year} method="get">
                         <input
                           type="number"
                           placeholder="1975"
@@ -319,7 +319,7 @@ class Header extends Component {
               </ul>
               <form
                 className="d-flex me-3"
-                action={this.state.search }
+                action={this.state.search}
                 method="get"
               >
                 <input
@@ -364,20 +364,27 @@ class Header extends Component {
                         </a>
                       </li> */}
                       <li>
+                        <a className="dropdown-item" href="/my-vip">
+                          My Vip Phim
+                        </a>
+                      </li>
+                      <li>
                         <a className="dropdown-item" href="/my-koin">
                           Ví Koin
                         </a>
                       </li>
-                      <li>
-                        <a className="dropdown-item" href="/ma-gioi-thieu">
-                          Nhập mã giới thiệu
-                        </a>
-                      </li>
+
                       <li>
                         <a className="dropdown-item" href="/voucher">
                           Nhập Voucher
                         </a>
                       </li>
+                      <li>
+                        <a className="dropdown-item" href="/ma-gioi-thieu">
+                          Mã giới thiệu
+                        </a>
+                      </li>
+
                       <li>
                         <a
                           className="dropdown-item"

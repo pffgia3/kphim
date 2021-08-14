@@ -48,7 +48,7 @@ class PopupItem extends Component {
   }
 
   forcetoUpdate(){
-    console.log(this.state.id +" != "+ this.props.id);
+    // console.log(this.state.id +" != "+ this.props.id);
         if (this.state.id != this.props.id){
 
           let i = 0;
